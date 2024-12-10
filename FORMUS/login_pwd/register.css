@@ -1,0 +1,113 @@
+/*
+ * Nom : Usenmez
+ * Prénom : Selim
+ * Date : 2021-05-06
+ * Fonctionnalité : Styles CSS pour le formulaire avec design moderne et responsive
+ */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fond semi-transparent */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 80%; /* Largeur de 80% de l'écran */
+    max-width: 900px; /* Largeur maximale */
+}
+
+h1 {
+    font-size: 3rem; /* Taille du titre */
+    margin-bottom: 1.5rem;
+    color: red;
+    text-transform: uppercase;
+}
+
+form label {
+    display: block;
+    text-align: left;
+    margin: 0.5rem 0;
+    font-size: 1.2rem; /* Taille du texte des labels */
+    color: white;
+}
+
+form input {
+    width: 100%; /* Champs prennent toute la largeur disponible */
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+form input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+form button {
+    width: 100%;
+    padding: 1rem; /* Bouton ajusté en taille */
+    font-size: 1.2rem;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+form button:hover {
+    background-color: darkred;
+}
+
+form p {
+    margin-top: 1rem;
+    font-size: 1rem; /* Texte ajusté */
+    color: white;
+    text-align: center;
+}
+
+form p a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form p a:hover {
+    color: darkred;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Taille plus grande pour être visible */
+    accent-color: red; /* Checkbox en rouge pour correspondre au design */
+}
+
+label[for="show_password"] {
+    font-size: 1rem;
+    color: white;
+    margin-left: 5px;
+}

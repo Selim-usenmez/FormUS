@@ -1,0 +1,22 @@
+/* Usenmez Selim
+    2021-05-06
+    code css pour le style de l'impression*/
+
+@media print {
+    .print-btn {
+        display: none;
+    }
+
+    body {
+        font-size: 14px;
+        color: #000;
+        background: none;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+}

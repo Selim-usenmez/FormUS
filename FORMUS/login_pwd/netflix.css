@@ -1,0 +1,167 @@
+/*
+ * Nom : Usenmez
+ * Prénom : Selim
+ * Date : 2021-05-06
+ * Fonctionnalité : Animation et styles inspirés de l'interface Netflix
+ */
+
+
+/* Fonts similaires à Netflix */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Animation Netflix-like */
+.animation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Effet de fondu */
+}
+
+.animation-container.hidden {
+    opacity: 0; /* Disparaît avec un effet de fondu */
+}
+
+.animation-text {
+    display: flex;
+    font-size: 8rem;
+    color: red;
+    letter-spacing: 0.2rem;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out 0.5s forwards; /* Animation d'apparition plus rapide */
+}
+
+.animation-text span {
+    transform: scale(0);
+    display: inline-block;
+    animation: zoomIn 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; /* Durée réduite pour rapidité */
+}
+
+.animation-text span:nth-child(1) { animation-delay: 0.5s; }
+.animation-text span:nth-child(2) { animation-delay: 0.7s; }
+.animation-text span:nth-child(3) { animation-delay: 0.9s; }
+.animation-text span:nth-child(4) { animation-delay: 1.1s; }
+.animation-text span:nth-child(5) { animation-delay: 1.3s; }
+.animation-text span:nth-child(6) { animation-delay: 1.5s; }
+.animation-text span:nth-child(7) { animation-delay: 1.7s; }
+.animation-text span:nth-child(8) { animation-delay: 1.9s; }
+.animation-text span:nth-child(9) { animation-delay: 2.1s; }
+.animation-text span:nth-child(10) { animation-delay: 2.3s; }
+
+@keyframes zoomIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.form-container {
+    display: none;
+    justify-content: center;
+    align-items: flex-start; /* Place le formulaire en haut */
+    width: 100vw;
+    background-color: black;
+    position: fixed;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Ajout du fondu */
+    padding-top: 2rem; /* Ajoute un espace en haut */
+    text-align: center; /* Centre le contenu horizontalement */
+}
+
+.form-container.active {
+    display: flex;
+    opacity: 1; /* Apparition avec un effet de fondu */
+}
+
+form {
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+form h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: red;
+}
+
+form label {
+    display: block;
+    text-align: left;
+    margin: 1rem 0 0.5rem;
+    font-size: 1.2rem;
+    color: red; /* Le texte des labels sera en rouge */
+}
+
+form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#netflix-video {
+    display: none; /* Cache la vidéo */
+}
+
+#netflix-video,
+#fake-button {
+    display: none; /* Cache complètement les éléments */
+}
+
+#netflix-video {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.animation-container.hidden {
+    display: none;
+}
+
+.form-container.hidden {
+    display: none;
+}
+
+.form-container.active {
+    display: flex;
+}
+.animation-container.hidden {
+    display: none;
+}

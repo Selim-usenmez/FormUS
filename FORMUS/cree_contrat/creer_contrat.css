@@ -1,0 +1,274 @@
+/* Usenmez Selim
+    2021-05-06
+    code css pour la page de création du contrat*/
+
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        background-size: 400% 400%;
+        animation: gradientAnimation 10s ease infinite;
+    }
+    
+ 
+    @keyframes gradientAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .form-container {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 640px;
+        text-align: center;
+        color: #ffffff;
+        margin: 20px; 
+    }
+    
+    h1 {
+        color: #ffffff;
+        margin-bottom: 25px;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    form label {
+        display: block;
+        text-align: left;
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: #ffffff;
+    }
+    
+    input[type="text"], input[type="date"], textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        font-size: 16px;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    input::placeholder, textarea::placeholder {
+        color: #ccc;
+    }
+    
+    input[type="text"]:focus, input[type="date"]:focus, textarea:focus {
+        background-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        outline: none;
+    }
+    
+    .button-group {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .button-group button {
+        width: 48%;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+    
+    #ajouter-partenaire {
+        background-color: #5f098d;
+    }
+    
+    #ajouter-partenaire:hover {
+        transform: scale(1.05);
+        background-color: #6413c7;
+        box-shadow: 0 6px 20px rgba(112, 60, 180, 0.6);
+    }
+    
+    #supprimer-partenaire {
+        background-color: #dc3545;
+    }
+    
+    #supprimer-partenaire:hover {
+        transform: scale(1.05);
+        background-color: #c82333;
+        box-shadow: 0 6px 20px rgba(220, 53, 69, 0.6);
+    }
+    
+    .popup {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 300px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 999;
+    }
+    
+    .popup.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .popup.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .popup-content {
+        text-align: left;
+    }
+    
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 18px;
+        cursor: pointer;
+        color: white;
+    }
+    
+    #creer-contrat {
+        position: sticky;
+        bottom: 20px;
+        right: 20px;
+        padding: 15px 30px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        background-color: #71e096;
+        color: white;
+        cursor: not-allowed;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    #creer-contrat.active {
+        background-color: #28a745;
+        box-shadow: 0 6px 20px rgba(40, 167, 69, 0.5);
+        cursor: pointer;
+    }
+    
+    #creer-contrat:hover.active {
+        background-color: #218838;
+    }
+    
+    @keyframes gradientAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    #chatbox {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 300px;
+        max-width: 90%;
+        height: 40px;
+        background-color: #3498db;
+        border-radius: 10px 10px 0 0;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: height 0.3s ease, top 0.3s ease; 
+        cursor: pointer;
+    }
+    
+    #chatbox.expanded {
+        height: 400px; 
+        cursor: default;
+    }
+    
+    #chatbox-header {
+        background-color: #2980b9;
+        color: white;
+        padding: 10px;
+        cursor: move;
+        user-select: none; 
+    }
+    
+    #messages {
+        display: none;
+        padding: 10px;
+        background-color: #fff;
+        height: calc(100% - 90px);
+        overflow-y: auto;
+    }
+    
+    #chatbox.expanded #messages {
+        display: block;
+    }
+    
+    #userInput {
+        display: none;
+        width: 90%;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 10px;
+    }
+    
+    #chatbox.expanded #userInput {
+        display: block;
+    }
+    
+    #chatbox button {
+        display: none;
+        padding: 5px 10px;
+        margin: 5px;
+        background-color: #2980b9;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    #chatbox.expanded button {
+        display: block;
+    }
+
+    .btn-retour {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 1000;
+    }
+    
+    .btn-retour a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .btn-retour a:hover {
+        background-color: #2980b9;
+        box-shadow: 0 6px 20px rgba(41, 128, 185, 0.6);
+    }
+    
