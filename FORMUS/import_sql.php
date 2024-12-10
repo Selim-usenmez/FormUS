@@ -1,7 +1,7 @@
 <?php
 $host = 'selim-srv.mysql.database.azure.com';
 $username = 'admin@selim-srv';
-$password = 'votre_mot_de_passe';
+$password = '98doMvtZ60rX3cKSqzYaV';
 $database = 'selim';
 
 $conn = new mysqli($host, $username, $password, $database);
